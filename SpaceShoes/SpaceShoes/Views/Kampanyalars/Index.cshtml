@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SpaceShoes.Models.Kampanyalar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KampanyaAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IndirimOrani)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BaslangicTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BitisTarihi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KampanyaAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndirimOrani)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BaslangicTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BitisTarihi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.KampanyaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.KampanyaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.KampanyaId })
+        </td>
+    </tr>
+}
+
+</table>

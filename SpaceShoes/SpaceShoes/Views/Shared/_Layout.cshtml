@@ -1,0 +1,379 @@
+﻿<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modern Shoppe a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Modern Shoppe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--//for-mobile-apps -->
+    <!--Custom Theme files -->
+    <link href="/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/css/flexslider.css" type="text/css" media="screen" />
+    <!--//Custom Theme files -->
+    <!--js-->
+    <script src="Content/js/jquery-1.11.1.min.js"></script>
+    <script src="Content/js/modernizr.custom.js"></script>
+    <!--//js-->
+    <!--cart-->
+    <script src="Content/js/simpleCart.min.js"></script>
+    <!--cart-->
+    <!--web-fonts-->
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Fascinate' rel='stylesheet' type='text/css'>
+    <!--web-fonts-->
+    <!--animation-effect-->
+    <link href="css/animate.min.css" rel="stylesheet">
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--//animation-effect-->
+    <!--start-smooth-scrolling-->
+    <script type="text/javascript" src="Content/js/move-top.js"></script>
+    <script type="text/javascript" src="Content/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //sayfa açıldığında otomatik açılması için
+            $("#modalNesne").modal('show');
+        });
+    </script>
+    <!--//end-smooth-scrolling-->
+    <style>
+        .mainmenubtn {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-child {
+            display: none;
+            background-color: whitesmoke;
+            min-width: 200px;
+        }
+
+            .dropdown-child a {
+                color: black;
+                padding: 15px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown:hover .dropdown-child {
+            display: block;
+        }
+        .b{
+            border-radius:10px 10px 10px 10px;
+            padding:0px 85px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div id="modalNesne" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><b>&times;</b></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-push-12">
+                            <img src="~/jquery_cookie/js/ayakkabi-dunyasi-yuzde-70-indirim.jpg" class="img-responsive">
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="top-header navbar navbar-default">
+            <!--header-one-->
+            <div class="container">
+                <h2><a href="/Iletisims/Index">Bizimle İletişime Geçin</a></h2>
+                <div class="nav navbar-nav navbar-right header-two-right">
+                    <div class="header-right my-account">
+                        @{
+                        if (Session["KisiId"] != null)
+                        {
+                            if (Convert.ToInt32(Session["RolId"]) == 1)
+                            {
+                                <p>
+                                    <font size="2">
+                                        <div class="dropdown">
+                                            <img src="~/Content/images/icons8-customer-64.png" /><b>Hoşgeldiniz</b>
+                                            <div class="dropdown-child">
+                                                <a href="/Admin/Index"><b>Admin Paneli</b></a>
+                                                <a href="/Giris/Cikis"><b>Çıkış Yap</b></a>
+                                            </div>
+
+                                        </div>
+                                    </font>
+                                </p>
+                        }
+
+                        else
+                        {
+                            <p>
+                                <font size="3">
+
+                                    <div class="dropdown">
+                                        <img src="~/Content/images/icons8-customer-64.png" /><b>Hoşgeldiniz,</b>@Session["KisiAdi"].ToString()
+                                        <div class="dropdown-child">
+                                            <a href="/Kisilers/Hesap"><b>Hesabım</b></a>
+                                            <a href="/Kisilers/favori"><b>Favorilerim</b></a>
+                                            <a href="/Giris/Cikis"><b>Çıkış Yap</b></a>
+                                        </div>
+
+                                    </div>
+                                </font>
+                            </p>
+
+                    }
+
+
+                }
+                else
+                {
+
+
+                    <p><font size="3"><a href="/Kisilers/GirisYap"><img src="~/Content/images/icons8-customer-64.png" /><b>Giriş</b></a></font></p>
+            }
+                        }
+                        <!-- <p><font size="2"> <a href="/Kisilers/Create"><img src="~/Content/images/icons8-customer-64.png" /><b>Giriş Yap</b> </a></font></p>  -->
+                    </div>
+                    <div class="nav navbar-nav wow fadeInLeft animated" data-wow-delay=".5s">
+                        @{
+                        if (Session["KisiId"] != null)
+                        {
+                            <p><font size="2"> <a href="/Kisilers/sepet"><img src="~/Content/images/icons8-add-shopping-cart-64.png" /><b>Sepetim</b> </a></font></p>
+                    }
+                    if (Session["KisiId"] == null)
+                    {
+                        <p><font size="2"> <a href="/Kisilers/Ziyaretsepet"><img src="~/Content/images/icons8-add-shopping-cart-64.png" /><b>Sepetim</b> </a></font></p>
+                }
+                        }
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="header-two navbar navbar-default">
+                <!--header-two-->
+
+                <div class="container">
+                    <div class="nav navbar-nav header-two-left"></div>
+
+                    <div class="nav navbar-nav logo wow zoomIn animated" data-wow-delay=".7s">
+                        <h1><a href="index.html"> SPACE<b> SHOES</b><span class="tag">Ayakkabı Dünyasına Dair Her Şey </span> </a></h1>
+                        @using (Html.BeginForm("UrunAra", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {<div class="input-group">
+                            <input id="Ara" name="Ara" class="form.control b" />
+                            <button class="btn" value="Ara" type="submit"><img src="https://img.icons8.com/material-two-tone/16/000000/search.png"></button>
+                        </div>
+                     }
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="top-nav navbar navbar-default">
+            <!--header-three-->
+            <div class="container">
+                <nav class="navbar" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!--navbar-header-->
+                    <div class="container">
+                        <nav class="navbar" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <!--navbar-header-->
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <ul class="nav navbar-nav top-nav-info">
+                                    <li><a href="/Home/Index" class="active">Ana Sayfa</a></li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kadın<b class="caret"></b></a>
+                                        <ul class="dropdown-menu multi-column multi-column1">
+                                            <div class="row">
+                                                <div class="col-sm-4 menu-grids menulist1">
+                                                    <ul class="multi-column-dropdown">
+                                                        <li><a class="list" href="/Category/Index/2">Topuklu Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/15">Spor Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/16">Günlük Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/18">Çizme</a></li>
+                                                        <li><a class="list" href="/Category/Index/17">Bot</a></li>
+                                                        <li><a class="list" href="/Category/Index/19">Babet</a></li>
+                                                        <li><a class="list" href="/Category/Index/20">Terlik/Sandalet</a></li>
+
+                                                    </ul>
+                                                </div>
+                                                <div class="clearfix"> </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown grid">
+                                        <a href="#" class="dropdown-toggle list1" data-toggle="dropdown">Erkek<b class="caret"></b></a>
+                                        <ul class="dropdown-menu multi-column multi-column2">
+                                            <div class="row">
+                                                <div class="col-sm-3 menu-grids">
+                                                    <ul class="multi-column-dropdown">
+                                                        <li><a class="list" href="/Category/Index/21">Spor Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/22">Klasik Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/23">Günlük Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/24">Bot</a></li>
+                                                        <li><a class="list" href="/Category/Index/25">Terlik/Sandalet</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="clearfix"> </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown grid">
+                                        <a href="#" class="dropdown-toggle list1" data-toggle="dropdown">Çocuk<b class="caret"></b></a>
+                                        <ul class="dropdown-menu multi-column menu-two multi-column3">
+                                            <div class="row">
+                                                <div class="col-sm-4 menu-grids">
+                                                    <h4><font color="iceblue">Kız</font></h4>
+                                                    <ul class="multi-column-dropdown">
+                                                        <li><a class="list" href="/Category/Index/26">Spor Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/27">Günlük Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/28">Bot</a></li>
+                                                        <li><a class="list" href="/Category/Index/29">Çizme</a></li>
+                                                        <li><a class="list" href="/Category/Index/30">Babet</a></li>
+                                                        <li><a class="list" href="/Category/Index/31">Terlik/Sandalet</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-sm-4 menu-grids">
+                                                    <h4><font color="iceblue">Erkek</font></h4>
+                                                    <ul class="multi-column-dropdown">
+                                                        <li><a class="list" href="/Category/Index/32">Spor Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/33">Günlük Ayakkabı</a></li>
+                                                        <li><a class="list" href="/Category/Index/35">Bot</a></li>
+                                                        <li><a class="list" href="/Category/Index/36">Çizme</a></li>
+                                                        <li><a class="list" href="/Category/Index/37">Terlik/Sandalet</a></li>
+                                                    </ul>
+                                                </div>
+
+                                                <div class="clearfix"> </div>
+                                            </div>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"> </div>
+                            </div>
+                    </div>
+            </div>
+
+            
+            <!--//header-->
+            <!--banner-->
+            <div class="banner">
+                <div class="banner-text">
+
+                    <div class="col-sm-7 banner-right wow fadeInRight animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+                        <section class="slider grid">
+                            <div class="col-sm-7 banner-right wow fadeInRight animated" data-wow-delay=".5s">
+                                <section class="slider grid">
+                                    <div class="flexslider">
+                                        <ul class="slides">
+                                            <li>
+                                                <h4>-30%</h4>
+                                                <img src="images/b1.png" alt="">
+                                            </li>
+                                            <li>
+                                                <h4>-25%</h4>
+                                                <img src="images/b2.png" alt="">
+                                            </li>
+                                            <li>
+                                                <h4>-32%</h4>
+                                                <img src="images/b3.png" alt="">
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                <!--FlexSlider-->
+                                <script defer src="js/jquery.flexslider.js"></script>
+                                <script type="text/javascript">
+                                    $(window).load(function () {
+                                        $('.flexslider').flexslider({
+                                            animation: "pagination",
+                                            start: function (slider) {
+                                                $('body').removeClass('loading');
+                                            }
+                                        });
+                                    });
+                                </script>
+                                <!--End-slider-script-->
+                            </div>
+
+                        </section>
+                        <!--FlexSlider-->
+                        <script defer="" src="js/jquery.flexslider.js"></script>
+                        <script type="text/javascript">
+                            $(window).load(function () {
+                                $('.flexslider').flexslider({
+                                    animation: "pagination",
+                                    start: function (slider) {
+                                        $('body').removeClass('loading');
+                                    }
+                                });
+                            });
+                        </script>
+                        <!--End-slider-script-->
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+                <div class="container">
+                    <div class="banner-text">
+                        <div class="col-sm-5
+                     -left wow fadeInLeft animated" data-wow-delay=".5s">
+                        </div>
+                    </div>
+                </div>
+                @RenderBody()
+            </div>
+
+            <script src="Content/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+﻿@model SpaceShoes.Models.Iletisim
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Iletisim</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soyad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soyad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mesaj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mesaj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kisiler.KisiAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kisiler.KisiAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KisiId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

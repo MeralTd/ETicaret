@@ -1,0 +1,136 @@
+﻿@model SpaceShoes.Models.Kisiler
+@{
+    ViewBag.Title = "Hesap";
+    Layout = null;
+}
+
+  
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/admin panel/css/style.css" rel="stylesheet" />
+    <link rel='stylesheet' href='http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+    <link href="~/icon/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <link href="~/icon/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="drawer">
+            <a class="navicon"></a>
+            <div class="menu">
+                <a data-menu="about" href="#" class="active"><i class="icon ion-android-person"></i></a>
+                <a data-menu="dashboard" href="#"><i class="icon ion-bag"></i></a>
+                <a data-menu="download" href="#"><i class="icon ion-ios-home"></i></a>
+            </div>
+            <span class="credits"></span>
+        </div>
+        <div class="content">
+            <div class="page noflex" data-page="dashboard">
+                <div class="header">
+                    <div class="title">
+                        <h2>Siparişlerim</h2>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="user-edit">
+
+                    </div>
+                    <div class="users-table">
+                        <div class="users-item header">
+                            <div class="table-item">
+                                SİPARİŞ NO
+                            </div>
+                            <div class="table-item">
+                                DURUM
+                            </div>
+                            <div class="table-item">
+                                TARİH
+                            </div>
+                            <div class="table-item">
+                                TUTAR
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="page noflex" data-page="download">
+                <div class="header">
+                    <div class="title">
+                        <h2>Adreslerim</h2>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="card wide">
+                        <div class="body">
+                            <div class="content">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Adres Adı</th>
+                                            <th>Adres</th>
+                                            <th>Kaydet / Düzenle</th>
+                                            <th>Sil</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="add-row">
+                                            <td colspan="4" class="new-row"><span><i class="fa fa-plus" aria-hidden="true"></i> Yeni Adres Ekle</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+                <div class="page active" data-page="about">
+                    <div class="header">
+                        <div class="title">
+                            <h2>Kullanıcı Bilgilerim</h2>
+                        </div>
+                    </div>
+                    <div class="info-container">
+                        <div class="info">
+
+                            <a>AD</a>
+                            <span><input name="Ad" placeholder=@Session["KisiAdi"].ToString() class="form-control" type="text"></span>
+                        </div>
+                        <div class="info">
+                            <a>SOYAD</a>
+                            <span><input name="Ad" placeholder=@Session["KisiSoyadi"].ToString() class="form-control" type="text"></span>
+                        </div>
+                        <div class="info">
+                            <a>EMAİL</a>
+                            <span><input name="Ad" placeholder=@Session["KisiEmail"].ToString() class="form-control" type="text"></span>
+                        </div>
+                        <div class="info">
+                            <a>CEP TELEFONU</a>
+                            <span><input name="Ad" placeholder=@Session["KisiTel"].ToString() class="form-control" type="text"></span>
+                        </div>
+                        <div class="info">
+                            <a href="/Kisilers/guncelle/@Session["KisiId"].ToString()">
+                            <button name="KullaniciGuncelle" type="submit" class="btn">GÜNCELLE<span class="glyphicon glyphicon-send"></span></button>
+                        </div>
+                       
+
+                    </div>
+                </div>
+        </div>
+        <div class="sidebar">
+
+        </div>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="~/admin panel/js/index.js"></script>
+</body>
+</html>
+
+
+

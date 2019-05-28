@@ -1,0 +1,35 @@
+﻿@model SpaceShoes.Models.Kategoriler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kategoriler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kampanyalar.KampanyaAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kampanyalar.KampanyaAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.KategoriId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

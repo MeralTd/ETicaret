@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
+<meta http-equiv="content-language" content="TR" />
+
+<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>							 				        
+<link type="text/css" href="js/basic.css" rel="stylesheet" media="screen" />
+<!--[if lt IE 7]>
+<link type="text/css" href="js/basic_ie.css" rel="stylesheet" media="screen" />
+<![endif]-->
+<link type="text/css" href="js/gg_fb.css" rel="stylesheet" media="screen" />
+<script type="text/javascript" src="js/jquery.simplemodal.1.4.1.min.js"></script>
+
+			</head>
+			<body>
+	               
+<script type="text/javascript"> 
+
+if(GetCookie('cerez') !== 'milat' )	
+	{
+		jQuery(document).ready( function() {
+			jQuery('.gg-fb').modal({minWidth:"600", overlayClose: true , escClose : false });
+// Açılacak en küçük genişliğin 600px olacağını ve 'gg-fb' divini açmasını belirttik
+// Siyah alana tıklayınca kapanmasın diyorsak overlayClose : false yapmalıyız.Açmak ifin true olmalı
+// Esc tuşuna basınca kapanmasın diyorsak escClose : false yapmalıyız.Açmak ifin true olmalı
+ 
+			SetCookie('cerez','milat',1); 
+
+		});  
+	}
+</script>
+
+<div style="display:none;"><div class="gg-fb"><img src="js/yorum_yaz.png" alt="" height="320" width="600" /><div class="fb-div"></div></div></div>
+
+
+    </body>
+
+</html>

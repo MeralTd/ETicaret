@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SpaceShoes.Models.Resimler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BuyukBoy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrtaBoy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KucukBoy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuyukBoy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrtaBoy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KucukBoy)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ResimId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ResimId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ResimId })
+        </td>
+    </tr>
+}
+
+</table>

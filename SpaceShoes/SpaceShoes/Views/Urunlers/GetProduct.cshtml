@@ -1,0 +1,366 @@
+﻿@using SpaceShoes.Models
+@model IEnumerable<SpaceShoes.Models.Urunler>
+
+
+@{
+    Layout = null;
+}
+<head>
+    <title>Modern Shoppe a Ecommerce Online Shopping Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Modern Shoppe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--//for-mobile-apps -->
+    <!--Custom Theme files -->
+    <link href="/Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/css/flexslider.css" type="text/css" media="screen" />
+    <!--//Custom Theme files -->
+    <!--js-->
+    <script src="Content/js/jquery-1.11.1.min.js"></script>
+    <script src="Content/js/modernizr.custom.js"></script>
+    <!--//js-->
+    <!--cart-->
+    <script src="Content/js/simpleCart.min.js"></script>
+    <!--cart-->
+    <!--web-fonts-->
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Pompiere' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Fascinate' rel='stylesheet' type='text/css'>
+    <!--web-fonts-->
+    <!--animation-effect-->
+    <link href="css/animate.min.css" rel="stylesheet">
+
+
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <!--//animation-effect-->
+    <!--start-smooth-scrolling-->
+    <script type="text/javascript" src="Content/js/move-top.js"></script>
+    <script type="text/javascript" src="Content/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //sayfa açıldığında otomatik açılması için
+            $("#modalNesne").modal('show');
+        });
+    </script>
+    <!--//end-smooth-scrolling-->
+    <style>
+        .mainmenubtn {
+            background-color: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-child {
+            display: none;
+            background-color: black;
+            min-width: 200px;
+        }
+
+            .dropdown-child a {
+                color: white;
+                padding: 20px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown:hover .dropdown-child {
+            display: block;
+        }
+
+        .product-grids .new-top {
+            padding: 1.5em 1.5em 0;
+            margin-left: 100px;
+            padding-top: 50px;
+            float: right;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-top: 300px;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+
+        <div class="container">
+            <div class="nav navbar-nav navbar-right header-two-right">
+                <div class="header-right my-account">
+                    @{
+                        if (Session["KisiId"] != null)
+                        {
+                            if (Convert.ToInt32(Session["RolId"]) == 1)
+                            {
+                                <p>
+                                    <font size="2">
+                                        <div class="dropdown">
+                                            <img src="~/Content/images/icons8-customer-64.png" /><b>Hoşgeldiniz</b>
+                                            <div class="dropdown-child">
+                                                <a href="/Admin/Index"><b>Admin Paneli</b></a>
+                                                <a href="/Giris/Cikis"><b>Çıkış Yap</b></a>
+                                            </div>
+
+                                        </div>
+                                    </font>
+                                </p>
+                            }
+
+                            else
+                            {
+                                <p>
+                                    <font size="2">
+
+                                        <div class="dropdown">
+                                            <img src="~/Content/images/icons8-customer-64.png" /><b>Hoşgeldiniz,</b><a href="/Kisilers/Index/@Session["KisiId"]">@Session["KisiAdi"].ToString()</a>
+                                            <div class="dropdown-child">
+                                                <a href="/Kisilers/Hesap"><b>Hesabım</b></a>
+                                                <a href="/Kisilers/favori"><b>Favorilerim</b></a>
+                                                <a href="/Giris/Cikis"><b>Çıkış Yap</b></a>
+                                            </div>
+
+                                        </div>
+                                    </font>
+                                </p>
+
+                            }
+
+
+                        }
+                        else
+                        {
+
+
+                            <p><font size="2" face="calibri"><a href="/Kisilers/GirisYap"><img src="~/Content/images/icons8-customer-64.png" /><b>Giriş</b></a></font></p>
+                        }
+                    }
+                </div>
+                <div class="nav navbar-nav wow fadeInLeft animated" data-wow-delay=".5s">
+                    <p><font size="2"> <a href="/Kisilers/sepet"><img src="~/Content/images/icons8-add-shopping-cart-64.png" /><b>Sepetim</b> </a></font></p>
+                </div>
+                
+                <div class="clearfix"> </div>
+            </div>
+
+        </div>
+        <div class="top-nav navbar navbar-default">
+            <!--header-three-->
+            <div class="container">
+                <nav class="navbar" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!--navbar-header-->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav top-nav-info">
+                            <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kadın<b class="caret"></b></a>
+                                <ul class="dropdown-menu multi-column multi-column1">
+                                    <div class="row">
+                                        <div class="col-sm-4 menu-grids menulist1">
+                                            <ul class="multi-column-dropdown">
+                                                <li><a class="list" href="/Category/Index/2">Topuklu Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/15">Spor Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/16">Günlük Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/18">Çizme</a></li>
+                                                <li><a class="list" href="/Category/Index/17">Bot</a></li>
+                                                <li><a class="list" href="/Category/Index/19">Babet</a></li>
+                                                <li><a class="list" href="/Category/Index/20">Terlik/Sandalet</a></li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown grid">
+                                <a href="#" class="dropdown-toggle list1" data-toggle="dropdown">Erkek<b class="caret"></b></a>
+                                <ul class="dropdown-menu multi-column multi-column2">
+                                    <div class="row">
+                                        <div class="col-sm-3 menu-grids">
+                                            <ul class="multi-column-dropdown">
+                                                <li><a class="list" href="/Category/Index/21">Spor Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/22">Klasik Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/23">Günlük Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/24">Bot</a></li>
+                                                <li><a class="list" href="/Category/Index/25">Terlik/Sandalet</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="dropdown grid">
+                                <a href="#" class="dropdown-toggle list1" data-toggle="dropdown">Çocuk<b class="caret"></b></a>
+                                <ul class="dropdown-menu multi-column menu-two multi-column3">
+                                    <div class="row">
+                                        <div class="col-sm-4 menu-grids">
+                                            <h4><font color="iceblue">Kız</font></h4>
+                                            <ul class="multi-column-dropdown">
+                                                <li><a class="list" href="/Category/Index/26">Spor Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/27">Günlük Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/28">Bot</a></li>
+                                                <li><a class="list" href="/Category/Index/29">Çizme</a></li>
+                                                <li><a class="list" href="/Category/Index/30">Babet</a></li>
+                                                <li><a class="list" href="/Category/Index/31">Terlik/Sandalet</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-4 menu-grids">
+                                            <h4><font color="iceblue">Erkek</font></h4>
+                                            <ul class="multi-column-dropdown">
+                                                <li><a class="list" href="/Category/Index/32">Spor Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/33">Günlük Ayakkabı</a></li>
+                                                <li><a class="list" href="/Category/Index/35">Bot</a></li>
+                                                <li><a class="list" href="/Category/Index/36">Çizme</a></li>
+                                                <li><a class="list" href="/Category/Index/37">Terlik/Sandalet</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="clearfix"> </div>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="clearfix"> </div>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+        <br /><br /><br />
+        <div class="container" style="background-color:#EEEEEE">
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+                    <div class="product-grids simpleCart_shelfItem wow fadeInUp animated" data-wow-delay=".5s">
+                        <div class="new-top">
+                            <p class="title">@item.UrunAdi</p>
+                            <img src="~/Content/images/@Html.DisplayFor(modelItem => item.Resimler.BuyukBoy)" width="200" height="200" />
+
+                            <div class="ofr">
+                                <p><span class="item_price">@item.SatisFiyat.ToString("##.## ₺")</span></p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div>
+                        <div class="col-md-7 col-xs-6">
+
+                            <p class="title"><b>Açıklama: @item.UrunAciklama</b></p>
+                            <br />
+                            <p class="title"><b>Markası: @item.Markalar.MarkaAdi</b></p>
+                            <br />
+                            <select class="form-control" id="amount" name="amount">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <br />
+                            @if (Session["KisiId"] != null)
+                            {
+                                <button><a class="item_add" href="/Kisilers/SepetEkle/@item.UrunId">Sepete Ekle</a></button>
+                            }
+                            @if (Session["KisiId"] == null)
+                            {
+                                <button><a class="item_add" href="/Kisilers/Ziyaret/SepetEkle/@item.UrunId">Sepete Ekle</a></button>
+                            }
+                            <br />
+
+                        </div>
+
+                    </div>
+                    
+                }
+
+
+
+            </div>
+        </div>
+    </div>
+
+        <script>
+    function addToCart(e)
+    {
+        e.preventDefault();
+        debugger;
+        var Id=item.UrunId;
+        var selectedAmount=$('#amount').val();
+
+        $.ajax({
+            type: "post",
+            url: "@(Url.Action("SetCookieAndSession","Urunlers"))",
+            data: {'id':Id , 'selectedAmount':selectedAmount },
+            ajaxasync: true,
+
+            success: function (partialView) {
+
+                $('#GetProductAtBasked').html(partialView);
+                $('#add-to-basket').html('Sepetinizde');
+                $('#add-to-basket').prop('disabled', true);
+
+            },
+            error: function (data) {
+                debugger;
+                alert("hata");
+            }
+
+        });
+    }
+        </script>
+
+        
+        </body>

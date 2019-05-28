@@ -1,0 +1,83 @@
+﻿@model SpaceShoes.Models.Urunler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Urunler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SatisFiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SatisFiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrunAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrunAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kampanyalar.KampanyaAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kampanyalar.KampanyaAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kampanyalar1.KampanyaAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kampanyalar1.KampanyaAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategoriler.KategoriAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategoriler.KategoriAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Markalar.MarkaAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Markalar.MarkaAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Resimler.BuyukBoy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Resimler.BuyukBoy)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UrunId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

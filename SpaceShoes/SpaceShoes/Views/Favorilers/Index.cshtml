@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SpaceShoes.Models.Favoriler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Kisiler.KisiAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Urunler.UrunAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kisiler.KisiAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Urunler.UrunAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FavoriId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FavoriId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FavoriId })
+        </td>
+    </tr>
+}
+
+</table>

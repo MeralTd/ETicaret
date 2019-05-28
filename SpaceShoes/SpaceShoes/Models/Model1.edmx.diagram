@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="500df67e6b87412083904b8c7316a067" Name="Diagram1">
+        <EntityTypeShape EntityType="E_TicaretModel.Adresler" Width="1.5" PointX="7.5" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Favoriler" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Kampanyalar" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Kategoriler" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Kisiler" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Markalar" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.OzellikDeger" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.OzellikTip" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Resimler" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Roller" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Sepet" Width="1.5" PointX="10.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Siparisler" Width="1.5" PointX="12.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Urunler" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.Iletisim" Width="1.5" PointX="7.5" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="E_TicaretModel.UrunOzellik" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="E_TicaretModel.FK_Adresler_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Favoriler_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Favoriler_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Kategoriler_Kampanyalar" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Urunler_Kampanyalar" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_OzellikTip_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Urunler_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Iletisim_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Kisiler_Roller" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Sepet_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Siparisler_Kisiler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Urunler_Markalar" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_OzellikDeger_OzellikTip" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_UrunOzellik_OzellikDeger" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_UrunOzellik_OzellikTip" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Urunler_Resimler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Sepet_Urunler1" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Siparisler_Sepet" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_Siparisler_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="E_TicaretModel.FK_UrunOzellik_Urunler" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

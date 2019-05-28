@@ -1,0 +1,72 @@
+﻿    @model IEnumerable<SpaceShoes.Models.Urunler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SatisFiyat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrunAciklama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kampanyalar.KampanyaAdi)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.Kategoriler.KategoriAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Markalar.MarkaAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resimler.BuyukBoy)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SatisFiyat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrunAciklama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kampanyalar.KampanyaAdi)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Kategoriler.KategoriAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Markalar.MarkaAdi)
+        </td>
+        <td>
+            <img src="/Content/images/@Html.DisplayFor(modelItem => item.Resimler.BuyukBoy)" width="30" height="30" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UrunId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UrunId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UrunId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,119 @@
+﻿@model SpaceShoes.Models.Kisiler
+
+@{
+    Layout = null;
+}
+
+
+
+<style>
+    body {
+        background-image: url("/Content/images/5946ed0e5ef782380ff8764f882947b7.jpg");
+    }
+
+    button {
+        margin-left: 10px;
+        width: 260px;
+        height: 36px;
+        border-radius: 20px;
+        color: white;
+        font-size: 10px;
+        cursor: pointer;
+    }
+
+    .left {
+        width: 200px;
+        padding: 0px 150px;
+        margin: 5px;
+        font: italic 20px italic, sans-serif;
+    }
+
+    .right {
+        width: 120px;
+        padding: 0px 150px;
+    }
+
+    .h2 {
+        padding: 10px 150px;
+        margin-top: 100px;
+        font: italic 30px italic, sans-serif;
+    }
+
+    .h4 {
+        padding-left: 145px;
+    }
+
+    button.d {
+        margin-top: 30px;
+        margin-left: 100px;
+        background-color: #87CEFA;
+        font: 17px Arial, sans-serif;
+        Border-radius: 20px;
+    }
+
+    .container {
+        width: 55%;
+    }
+
+    .cont {
+        overflow: hidden;
+        position: relative;
+        width: 500px;
+        height: 600px;
+        padding-left: 40px;
+        margin: 0 auto 0;
+        background: #fff;
+        border: solid;
+        margin-top:75px;
+    }
+
+    .form-group {
+        width: 200px;
+        padding: 0px 150px;
+        margin: 5px;
+        font: italic 20px italic, sans-serif;
+    }
+
+    .d {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        background: #87CEFA;
+        text-transform: uppercase;
+    }
+</style>
+<body>
+
+    <div class="cont">
+
+        <h2 class="h2">Hoşgeldiniz,</h2>
+        <form action="/Uye-Giris" method="post">
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @required = "", @type = "Email" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <br />
+            <div class="row"></div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Sifre, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control", @required = "", @type = "password" } })
+                    @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row"></div>
+
+            <button type="submit" class="d ">Giriş Yap</button>
+
+
+
+
+            <h4 class="h4">Üye olmak için <a href="/Kisilers/Create"><font color="#87CEFA">tıklayınız</font></a></h4>
+        </form>
+    </div>
+</body>
+
+
